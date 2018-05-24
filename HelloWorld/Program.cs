@@ -16,14 +16,14 @@ namespace HelloWorld
             string messageTwo = "I am Spartacus";
 
             //            //Part Two Set Initial Spartacus Attributes
-            //            int ageOne = 35;
+            int ageOne = 35;
             //            int ageTwo = 45;
             //            int ageThree = 80;
             //            double heightOne = 72.50;
             //            double heightTwo = 91.45;
             //            float weightOne = 210.0284606f;
             //            float weightTwo = 331.12345678f;
-            //            bool isGodLikeOne = true;
+            bool isGodLikeOne = true;
             //            bool isGodLikeTwo = false;
             //            char genderMale = 'M';
             //            char genderFemale = 'F';
@@ -267,14 +267,53 @@ namespace HelloWorld
             //}
 
 
-            //FOREACH LOOP EXAMPLE
-            int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
-            foreach (int element in fibarray)
+            ////FOREACH LOOP EXAMPLE
+            //int[] fibarray = new int[] { 0, 1, 1, 2, 3, 5, 8, 13 };
+            //foreach (int element in fibarray)
+            //{
+            //    System.Console.WriteLine(element);
+            //}
+
+            isGodLikeOne = IsGodLike(ageOne);
+            Console.WriteLine("To say our hero is God like is " + isGodLikeOne);
+            Console.WriteLine(Reverse(messageTwo));
+        } //MAIN METHOD CLOSING
+
+
+        static bool IsGodLike(int age)
+        {
+            bool status;
+            if (age % 2 == 0)
             {
-                System.Console.WriteLine(element);
+                status = false;
             }
+            else
+            {
+                status = true;
+            }
+            return status;
+        }
 
 
+        static string Reverse(string text)
+        {
+            char[] cArray = text.ToCharArray();
+            string reverse = " ";
+            for (int i = cArray.Length - 1; i > -1; i--)
+            {
+                reverse += cArray[i];
+            }
+            return reverse;
+
+            ////RANDOM NUMBER GENERATOR EXAMPLE
+            //int[] RandNum = new int[6];
+            //Random r = new Random();
+            //for(int i=0; i<RandNum.Length; i++)
+            //{
+            //    RandNum[i] = r.Next(1, 100);
+            //}
+            //Console.WriteLine(RandNum);
         }
     }
 }
+
